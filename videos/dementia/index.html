@@ -1,0 +1,265 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>什麼是失智症？</title>
+<link rel="stylesheet" href="_runtime/runtime.css">
+<style>
+/* ── 插畫風主題：暖色紙張底 + 墨色粗線 + 平塗色塊（覆寫深色範本的變數） ── */
+:root{
+  --cream:#3B2F2A; --gold:#E2703A; --champ:#B8742A; --rose:#E8715F; --mint:#3FA796; --muted:#8A7A6C;
+  --line:rgba(59,47,42,.28); --glow-rgb:240,160,90;
+  --ink:#3B2F2A; --paper:#FFFDF7; --yellow:#F6C453; --teal:#3FA796; --blue:#5B8DB8; --orange:#F08A4B; --red:#E8715F;
+}
+#frame{background:
+  radial-gradient(900px 600px at 12% 10%,rgba(246,196,83,.28),transparent 60%),
+  radial-gradient(900px 700px at 92% 95%,rgba(63,167,150,.20),transparent 60%),
+  #FBF3E4}
+#bokeh{opacity:.35} #vig{display:none}
+#chrome{color:var(--muted)} #chrome .brandmark{color:var(--ink)}
+#subbox{background:rgba(255,253,247,.94);border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);color:var(--ink);backdrop-filter:none;font-weight:700}
+#subbox b{color:var(--gold)}
+.glass{background:var(--paper);border:4px solid var(--ink);box-shadow:10px 10px 0 var(--ink);backdrop-filter:none;border-radius:30px}
+.sheen{mix-blend-mode:normal;background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent)}
+#host img{filter:none}
+.abs{position:absolute!important}
+.abs svg{overflow:visible}
+#subbox{max-width:1600px}
+
+/* ── 這一集的版面（1920×1080；上方 140 品牌列、下方 160 字幕區） ── */
+#host{left:1340px;top:380px}
+#road{left:170px;top:190px;width:1000px;height:640px;opacity:0}
+#qs .q{position:absolute;font-family:"Inter";font-weight:800;font-size:110px;color:var(--orange);opacity:0;-webkit-text-stroke:3px var(--ink);paint-order:stroke fill}
+#title{left:0;width:1500px;top:300px;text-align:center}
+#title .h1{font-size:190px;letter-spacing:.04em}
+#title .h1 em{font-style:normal;color:var(--gold)}
+#title .h2{margin-top:10px;font-size:62px;color:var(--ink)}
+
+#chipL{left:180px;top:170px;font-size:40px;opacity:0}
+.pill{display:inline-flex;align-items:center;padding:12px 34px;border-radius:999px;border:4px solid var(--ink);background:var(--yellow);box-shadow:6px 6px 0 var(--ink);font-weight:900;font-family:"Noto Sans TC"}
+.pill.bad{background:#F8B7A6}
+#shelf{left:210px;top:260px;width:900px;height:620px;opacity:0}
+.board{position:absolute;left:0;width:900px;height:22px;border-radius:8px;background:#C98A55;border:4px solid var(--ink)}
+.bk{position:absolute;border:4px solid var(--ink);border-radius:8px 8px 3px 3px;transform-origin:50% 100%}
+.bk::after{content:"";position:absolute;left:10%;right:10%;top:18%;height:8px;border-radius:4px;background:rgba(255,255,255,.55)}
+#wonder{left:1500px;top:430px;font-family:"Inter";font-weight:900;font-size:150px;color:var(--orange);-webkit-text-stroke:4px var(--ink);opacity:0}
+
+.card3{top:240px;width:600px;height:600px;opacity:0;padding:36px 40px;text-align:center}
+#cardL{left:130px} #cardR{left:790px}
+.card3 .lab{font-size:34px;font-weight:900;display:inline-block;padding:8px 26px;border-radius:999px;border:4px solid var(--ink)}
+.card3 svg.k{width:280px;height:200px;margin:26px auto 0;display:block}
+.card3 .ds{font-family:"Noto Serif TC";font-weight:900;font-size:44px;line-height:1.3;margin-top:14px}
+.badge{position:absolute;right:-18px;top:-22px;width:110px;height:110px;border-radius:50%;border:5px solid var(--ink);display:grid;place-items:center;font-size:70px;font-weight:900;z-index:3;opacity:0}
+#okL{background:#9ED8B4} #warnR{background:var(--orange);color:#fff}
+
+.ic{top:250px;width:390px;height:520px;opacity:0;text-align:center;padding-top:30px}
+#ic1{left:130px} #ic2{left:550px} #ic3{left:970px}
+.ic svg{width:240px;height:240px;display:block;margin:0 auto}
+.ic .ti{font-family:"Noto Serif TC";font-weight:900;font-size:62px;margin-top:10px}
+.ic .su{font-size:30px;color:var(--muted);margin-top:8px;font-weight:700}
+#chart{left:150px;top:260px;width:1200px;height:600px;opacity:0;padding:20px}
+#chart svg{width:1160px;height:560px}
+#stamp{left:160px;top:160px;font-size:52px;opacity:0;transform:rotate(-3deg);background:#fff;color:var(--red)}
+.cl{font-family:"Noto Sans TC";font-weight:900;font-size:34px}
+
+#care{left:150px;top:200px;width:760px;height:650px;opacity:0}
+.step{left:960px;width:440px;font-size:52px;opacity:0;justify-content:flex-start;gap:20px}
+.step b{display:grid;place-items:center;width:62px;height:62px;border-radius:50%;background:var(--ink);color:#fff;font-size:38px;font-weight:900}
+#s1{top:260px} #s2{top:430px;background:#BFE6DD} #s3{top:600px;background:#F8B7A6}
+#heart{left:480px;top:210px;font-size:110px;color:var(--red);opacity:0;-webkit-text-stroke:4px var(--ink)}
+#quote{left:120px;top:320px;width:1050px}
+#quote .h2{font-size:84px;line-height:1.35}
+#quote .h2.big{font-size:104px;color:var(--gold);-webkit-text-stroke:0;margin-top:10px}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <!-- 阿公：可重複使用的原創角色 -->
+  <g id="grandpa" stroke="#3B2F2A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M62 -18 C70 -8 74 20 72 60" fill="none" stroke-width="9"/>
+    <path d="M52 -18 C58 -34 78 -34 82 -18" fill="none" stroke-width="9"/>
+    <path d="M-46 0 C-46 -86 -30 -118 0 -118 C30 -118 46 -86 46 0 Z" fill="#5B8DB8"/>
+    <path d="M-46 0 L-40 -50 M46 0 L40 -50" fill="none" opacity="0"/>
+    <circle cx="0" cy="-158" r="40" fill="#F2C9A5"/>
+    <path d="M-40 -164 C-44 -206 44 -206 40 -164 C30 -184 -30 -184 -40 -164 Z" fill="#EFE9DD"/>
+    <circle cx="-14" cy="-156" r="4.5" fill="#3B2F2A" stroke="none"/><circle cx="14" cy="-156" r="4.5" fill="#3B2F2A" stroke="none"/>
+  </g>
+  <g id="girl" stroke="#3B2F2A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M-46 0 C-46 -86 -30 -118 0 -118 C30 -118 46 -86 46 0 Z" fill="#3FA796"/>
+    <circle cx="0" cy="-158" r="40" fill="#F7D3B2"/>
+    <path d="M38 -176 C70 -176 76 -130 60 -112" fill="none" stroke="#4A342B" stroke-width="16"/>
+    <path d="M-42 -158 C-46 -212 46 -212 42 -158 C30 -186 -30 -186 -42 -158 Z" fill="#4A342B"/>
+    <circle cx="-14" cy="-154" r="4.5" fill="#3B2F2A" stroke="none"/><circle cx="14" cy="-154" r="4.5" fill="#3B2F2A" stroke="none"/>
+    <path d="M-12 -138 C-4 -126 4 -126 12 -138" fill="none" stroke-width="4"/>
+  </g>
+</defs></svg>
+
+<div id="stage">
+  <!-- S1：岔路口的阿公 -->
+  <div id="road" class="abs glass" style="overflow:hidden">
+    <svg viewBox="0 0 1000 640" width="1000" height="640">
+      <rect width="1000" height="640" fill="#CFE8E1"/>
+      <circle cx="800" cy="110" r="62" fill="#F6C453" stroke="#3B2F2A" stroke-width="5"/>
+      <path d="M-10 420 C200 330 350 360 500 330 C700 300 800 340 1010 300 V650 H-10 Z" fill="#9BD0A5" stroke="#3B2F2A" stroke-width="5"/>
+      <path d="M390 650 L470 335 L240 190 L300 168 L520 292 L700 168 L770 190 L560 335 L650 650 Z" fill="#E4D2AE" stroke="#3B2F2A" stroke-width="5" stroke-linejoin="round"/>
+      <g transform="translate(150 150)" stroke="#3B2F2A" stroke-width="5" stroke-linejoin="round"><path d="M-46 0 L0 -44 L46 0 Z" fill="#E8715F"/><rect x="-34" y="0" width="68" height="52" fill="#FFF8EA"/><rect x="-10" y="18" width="20" height="34" fill="#C98A55"/></g>
+      <g transform="translate(520 600)" stroke="#3B2F2A" stroke-width="4" stroke-linecap="round" fill="none"><use href="#grandpa"/><path d="M-24 -166 L-8 -172 M24 -166 L8 -172"/><path d="M-10 -134 C-4 -140 4 -140 10 -134"/></g>
+    </svg>
+    <div id="qs"><span class="q" id="q1" style="left:380px;top:170px">?</span><span class="q" id="q2" style="left:560px;top:120px;font-size:150px">?</span><span class="q" id="q3" style="left:660px;top:230px">?</span></div>
+  </div>
+  <div id="title" class="abs"><div class="eyebrow" data-t="eb"></div><div class="h1"><em>失智症</em></div><div class="h2" data-t="sub"></div></div>
+
+  <!-- S2：大腦圖書館 -->
+  <div id="chipL" class="abs pill" data-t="lib"></div>
+  <div id="shelf" class="abs"></div>
+  <div id="wonder" class="abs">?</div>
+
+  <!-- S3：健忘 vs 警訊 -->
+  <div id="cardL" class="abs card3 glass">
+    <div class="badge" id="okL">✓</div>
+    <span class="lab" style="background:#BFE6DD" data-t="okT"></span>
+    <svg class="k" viewBox="0 0 280 200"><g stroke="#3B2F2A" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><circle cx="80" cy="100" r="46" fill="#F6C453"/><circle cx="80" cy="100" r="16" fill="#FFFDF7"/><path d="M126 100 H250 M200 100 V138 M232 100 V128" fill="none" stroke-width="16"/><path d="M126 100 H250 M200 100 V138 M232 100 V128" fill="none" stroke="#F6C453" stroke-width="6"/></g></svg>
+    <div class="ds" data-t="okD"></div><div class="sheen"></div>
+  </div>
+  <div id="cardR" class="abs card3 glass">
+    <div class="badge" id="warnR">!</div>
+    <span class="lab" style="background:#F8B7A6" data-t="badT"></span>
+    <svg class="k" viewBox="0 0 280 200"><g stroke="#3B2F2A" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><circle cx="80" cy="100" r="46" fill="#F6C453"/><circle cx="80" cy="100" r="16" fill="#FFFDF7"/><path d="M126 100 H250 M200 100 V138 M232 100 V128" fill="none" stroke-width="16"/><path d="M126 100 H250 M200 100 V138 M232 100 V128" fill="none" stroke="#F6C453" stroke-width="6"/></g>
+      <text x="205" y="58" font-family="Noto Serif TC" font-weight="900" font-size="80" fill="#E2703A" stroke="#3B2F2A" stroke-width="3">?</text></svg>
+    <div class="ds" data-t="badD"></div><div class="sheen"></div>
+  </div>
+
+  <!-- S4：三種影響 + 早期發現曲線 -->
+  <div id="ic1" class="abs ic glass"><svg viewBox="0 0 240 240" stroke="#3B2F2A" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M30 50 H210 V160 H120 L70 205 V160 H30 Z" fill="#F6C453"/><circle cx="85" cy="105" r="9" fill="#3B2F2A" stroke="none"/><circle cx="120" cy="105" r="9" fill="#3B2F2A" stroke="none"/><circle cx="155" cy="105" r="9" fill="#3B2F2A" stroke="none"/></svg><div class="ti" data-t="i1"></div><div class="su" data-t="i1s"></div></div>
+  <div id="ic2" class="abs ic glass"><svg viewBox="0 0 240 240" stroke="#3B2F2A" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><path d="M120 40 V200 M70 205 H170" fill="none"/><path d="M40 80 L200 60" fill="none"/><path d="M30 130 L50 82 L70 130 Z M30 130 H70" fill="#BFE6DD"/><path d="M170 112 L190 64 L210 112 Z M170 112 H210" fill="#F8B7A6"/><circle cx="120" cy="36" r="12" fill="#F6C453"/></svg><div class="ti" data-t="i2"></div><div class="su" data-t="i2s"></div></div>
+  <div id="ic3" class="abs ic glass"><svg viewBox="0 0 240 240" stroke="#3B2F2A" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"><circle cx="120" cy="120" r="88" fill="#BFE6DD"/><path d="M120 50 L146 120 L120 190 L94 120 Z" fill="#F8B7A6"/><path d="M120 50 L146 120 L94 120 Z" fill="#E8715F"/><circle cx="120" cy="120" r="9" fill="#FFFDF7"/></svg><div class="ti" data-t="i3"></div><div class="su" data-t="i3s"></div></div>
+
+  <div id="stamp" class="abs pill" data-t="stamp"></div>
+  <div id="chart" class="abs glass">
+    <svg viewBox="0 0 1160 560" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M90 40 V480 H1120" stroke="#3B2F2A" stroke-width="7"/>
+      <path d="M1100 464 L1124 480 L1100 496" stroke="#3B2F2A" stroke-width="7"/>
+      <text x="100" y="32" class="cl" fill="#8A7A6C" data-t="yl"></text>
+      <text x="1000" y="530" class="cl" fill="#8A7A6C" data-t="xl"></text>
+      <path id="ca" pathLength="1" d="M90 110 C300 116 480 230 640 462" stroke="#E8715F" stroke-width="12"/>
+      <path id="cb" pathLength="1" d="M90 110 C360 118 720 160 1080 290" stroke="#3FA796" stroke-width="12"/>
+      <path id="cm" d="M330 90 V480" stroke="#3B2F2A" stroke-width="5" stroke-dasharray="4 14"/>
+      <circle id="cd" cx="330" cy="130" r="17" fill="#F6C453" stroke="#3B2F2A" stroke-width="6"/>
+      <text id="ct" x="344" y="78" class="cl" fill="#3B2F2A" data-t="mk"></text>
+      <text id="la" x="668" y="446" class="cl" fill="#E8715F" data-t="la"></text>
+      <text id="lb" x="660" y="136" class="cl" fill="#3FA796" data-t="lb"></text>
+    </svg>
+  </div>
+
+  <!-- S5：陪伴 + 收尾 -->
+  <div id="care" class="abs glass" style="overflow:hidden">
+    <svg viewBox="0 0 760 650" width="760" height="650">
+      <rect width="760" height="650" fill="#FBE9C6"/>
+      <circle cx="610" cy="120" r="56" fill="#F6C453" stroke="#3B2F2A" stroke-width="5"/>
+      <g stroke="#3B2F2A" stroke-width="5" stroke-linejoin="round"><rect x="108" y="330" width="26" height="140" fill="#C98A55"/><circle cx="121" cy="300" r="82" fill="#9BD0A5"/></g>
+      <path d="M-10 520 C200 480 560 480 770 520 V660 H-10 Z" fill="#9BD0A5" stroke="#3B2F2A" stroke-width="5"/>
+      <g transform="translate(250 590) scale(1.1)" stroke="#3B2F2A" stroke-width="4" stroke-linecap="round" fill="none"><use href="#grandpa"/><path d="M-24 -170 L-8 -170 M24 -170 L8 -170"/><path d="M-14 -140 C-6 -128 6 -128 14 -140"/></g>
+      <g transform="translate(500 590) scale(.95)"><use href="#girl"/></g>
+      <path d="M298 522 C340 548 410 548 456 522" stroke="#3B2F2A" stroke-width="22" stroke-linecap="round"/>
+      <path d="M298 522 C340 548 410 548 456 522" stroke="#F2C9A5" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="378" cy="540" r="15" fill="#F2C9A5" stroke="#3B2F2A" stroke-width="5"/>
+    </svg>
+  </div>
+  <div id="heart" class="abs">♥</div>
+  <div id="s1" class="abs pill step"><b>1</b><span data-t="st1"></span></div>
+  <div id="s2" class="abs pill step"><b>2</b><span data-t="st2"></span></div>
+  <div id="s3" class="abs pill step"><b>3</b><span data-t="st3"></span></div>
+  <div id="quote" class="abs"><div class="h2" data-t="q1"></div><div class="h2 big" data-t="q2"></div></div>
+
+  <div id="host"><img src="assets/host.svg" alt=""></div>
+</div>
+<script src="_runtime/gsap.min.js"></script>
+<script src="_tl.js"></script>
+<script src="_runtime/core.js"></script>
+<script>
+window.EPISODE = {
+  strings: {
+    zh: { eb:"WHAT IS DEMENTIA", sub:"不是變老，而是生病了", lib:"大腦 ＝ 圖書館",
+          okT:"正常的健忘", okD:"忘記鑰匙<br>放在哪裡", badT:"失智警訊", badD:"忘記鑰匙<br>是做什麼用的",
+          i1:"說話", i1s:"詞不達意、找不到字", i2:"判斷", i2s:"做決定變得困難", i3:"方向感", i3s:"在熟悉的地方迷路",
+          stamp:"不是正常老化", yl:"腦部功能", xl:"時間", mk:"早期發現", la:"太晚才發現", lb:"及早發現、延緩惡化",
+          st1:"多陪伴", st2:"耐心聽", st3:"提醒就醫", q1:"他也許會忘了你，", q2:"但你不要忘了他。" }
+  },
+  build(c) {
+    const { m, S, L, LE, LM } = c;
+    const sh = c.$("#shelf");
+
+    /* 書架：3 層、每層 9 本書，用固定亂數排列（每次渲染都一樣） */
+    const R = c.rng(5), cols = ["#F08A4B", "#3FA796", "#F6C453", "#5B8DB8", "#E8715F", "#9B8FD0", "#7CC38C"];
+    [0, 1, 2].forEach(r => {
+      const b = document.createElement("div"); b.className = "board"; b.style.top = (r * 200 + 160) + "px"; sh.appendChild(b);
+      for (let i = 0; i < 9; i++) {
+        const h = 110 + Math.round(R() * 40), w = 58 + Math.round(R() * 18), k = document.createElement("div");
+        k.className = "bk"; k.id = `b${r}${i}`; k.style.cssText = `left:${22 + i * 96}px;top:${r * 200 + 160 - h}px;width:${w}px;height:${h}px;background:${cols[(r * 3 + i * 2) % cols.length]}`;
+        sh.appendChild(k);
+      }
+    });
+
+    /* ─ S1：鉤子 ─ */
+    c.hostTo({ opacity: 1, scale: .8 }, S(0).start + .2, .8);
+    m.fromTo("#road", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .9, ease: "expo.out" }, S(0).start + .3);
+    ["#q1", "#q2", "#q3"].forEach((q, k) => m.fromTo(q, { opacity: 0, scale: 0, rotation: -20 }, { opacity: 1, scale: 1, rotation: k * 8 - 8, duration: .45, ease: "back.out(2.5)" }, LM(0, 0, .45 + k * .18)));
+    c.out("#road", L(0, 1) - .3, .6);
+    c.rise("#title .eyebrow", L(0, 1) + .1, 1.0);
+    c.rise("#title .h1", L(0, 1) + .25, 1.1);
+    c.rise("#title .h2", L(0, 1) + .9, 1.0);
+
+    /* ─ S2：圖書館比喻 ─ */
+    c.out("#title", S(1).start - .4);
+    c.rise("#chipL", S(1).start + .1, .9, 30);
+    m.fromTo("#shelf", { opacity: 0 }, { opacity: 1, duration: .4 }, S(1).start + .2);
+    m.fromTo(".board", { scaleX: 0, transformOrigin: "0 50%" }, { scaleX: 1, duration: .8, ease: "expo.out", stagger: .12 }, S(1).start + .25);
+    m.fromTo(".bk", { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: .5, ease: "back.out(2)", stagger: .035 }, L(1, 0) + .2);
+    c.hostTo({ x: -60, scale: .8 }, S(1).start, .8);
+    // 第 2 句：館員迷路，書歪掉、錯位、消失
+    const t2 = L(1, 1);
+    m.to("#chipL", { opacity: 0, y: -20, duration: .3 }, t2 - .05);
+    m.call(() => { c.$("#chipL").innerHTML = "失智症 ＝ 館員迷路"; c.$("#chipL").classList.add("bad"); }, null, t2 + .06);
+    m.to("#chipL", { opacity: 1, y: 0, duration: .4, ease: "back.out(2)" }, t2 + .07);
+    c.hostTo({ x: -120 }, t2, 1.1); c.hostTo({ x: 10 }, t2 + 1.4, 1.2); c.hostTo({ x: -90 }, t2 + 3, 1.2);
+    m.fromTo("#wonder", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .4, ease: "back.out(3)" }, t2 + .3);
+    // 書歪了
+    ["b02", "b05", "b11", "b17", "b23"].forEach((id, k) => m.to("#" + id, { rotation: (k % 2 ? 1 : -1) * (24 + k * 5), x: (k % 2 ? 1 : -1) * 16, duration: .5, ease: "back.out(2)" }, LM(1, 1, .3 + k * .05)));
+    // 找不到、放錯位（跳到別層）
+    [["b04", 200], ["b13", -200], ["b21", -200]].forEach(([id, dy], k) => m.to("#" + id, { y: dy, duration: .7, ease: "power3.inOut" }, LM(1, 1, .5 + k * .06)));
+    // 一頁一頁消失
+    ["b00", "b08", "b10", "b14", "b19", "b22", "b26", "b15"].forEach((id, k) => m.to("#" + id, { opacity: 0, y: "-=60", duration: .7, ease: "power1.in" }, LM(1, 1, .62 + k * .045)));
+
+    /* ─ S3：正常健忘 vs 警訊 ─ */
+    c.out(["#shelf", "#chipL", "#wonder"], S(2).start - .4);
+    c.hostTo({ x: 0, scale: .62 }, S(2).start - .2, .9);
+    c.rise("#cardL", S(2).start + .2, 1.0);
+    m.fromTo("#okL", { opacity: 0, scale: 0, rotation: -40 }, { opacity: 1, scale: 1, rotation: 8, duration: .5, ease: "back.out(3)" }, L(2, 0) + .5);
+    c.sheen("#cardL", L(2, 0) + .3);
+    c.rise("#cardR", L(2, 1) - .3, 1.0);
+    m.fromTo("#warnR", { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .5, ease: "back.out(3)" }, LM(2, 1, .55));
+    m.to("#warnR", { scale: 1.18, duration: .28, yoyo: true, repeat: 3, ease: "sine.inOut" }, LM(2, 1, .7));
+    c.sheen("#cardR", LM(2, 1, .5));
+
+    /* ─ S4：影響 + 早期發現 ─ */
+    c.out(["#cardL", "#cardR"], S(3).start - .4);
+    ["#ic1", "#ic2", "#ic3"].forEach((id, k) => m.fromTo(id, { opacity: 0, y: 70, scale: .9 }, { opacity: 1, y: 0, scale: 1, duration: .7, ease: "back.out(1.8)" }, LM(3, 0, .5 + k * .17)));
+    c.out(["#ic1", "#ic2", "#ic3"], L(3, 1) - .3);
+    m.fromTo("#stamp", { opacity: 0, scale: 2.4, rotation: -14 }, { opacity: 1, scale: 1, rotation: -3, duration: .4, ease: "power4.in" }, L(3, 1) + .1);
+    m.fromTo("#chart", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: .8, ease: "expo.out" }, L(3, 1) + .1);
+    m.fromTo("#ca", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.1, ease: "power2.inOut" }, LM(3, 1, .35));
+    m.fromTo(["#cm", "#cd", "#ct"], { opacity: 0 }, { opacity: 1, duration: .5 }, LM(3, 1, .55));
+    m.fromTo("#cb", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 1.4, ease: "power2.inOut" }, LM(3, 1, .62));
+    m.fromTo(["#la", "#lb"], { opacity: 0 }, { opacity: 1, duration: .5, stagger: .5 }, LM(3, 1, .75));
+
+    /* ─ S5：陪伴與收尾 ─ */
+    c.out(["#chart", "#stamp"], S(4).start - .4);
+    c.rise("#care", S(4).start + .1, 1.0);
+    m.fromTo("#heart", { opacity: 0, y: 20, scale: 0 }, { opacity: 1, y: -30, scale: 1, duration: .8, ease: "back.out(2.5)" }, S(4).start + 1.0);
+    m.to("#heart", { y: -52, duration: .9, yoyo: true, repeat: 5, ease: "sine.inOut" }, S(4).start + 1.8);
+    ["#s1", "#s2", "#s3"].forEach((id, k) => c.rise(id, [LM(4, 0, .22), LM(4, 0, .5), LM(4, 0, .78)][k], .8, 30));
+    c.out(["#care", "#heart", "#s1", "#s2", "#s3"], L(4, 1) - .4);
+    c.hostTo({ x: -40, y: 0, scale: .85 }, L(4, 1) - .3, 1.0);
+    c.rise("#quote .h2:not(.big)", L(4, 1) + .1, 1.0);
+    c.rise("#quote .big", LM(4, 1, .55), 1.0);
+  }
+};
+</script>
+<script src="_runtime/runtime.js"></script>
+</body></html>
