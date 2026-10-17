@@ -1,1 +1,3 @@
 videos/*/stills/zh_*.png
+videos/*/audio_*/
+probe.wav
