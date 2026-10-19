@@ -1,0 +1,352 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>什麼是失智症？</title>
+<link rel="stylesheet" href="_runtime/runtime.css">
+<style>
+/* ── 水彩手繪風（受吉卜力、德間書店啟發的原創風格）：暖紙底、柔和低飽和、棕色細線 ── */
+:root{
+  --cream:#4A372C; --gold:#D9663A; --champ:#B8742A; --muted:#8E7B6A; --line:rgba(74,55,44,.25);
+  --glow-rgb:255,255,255; --ink:#4A372C; --paper:#FFFBF1;
+}
+#frame{background:
+  radial-gradient(1000px 700px at 12% 8%,rgba(255,226,160,.55),transparent 60%),
+  radial-gradient(1000px 800px at 92% 96%,rgba(150,205,185,.45),transparent 60%),
+  linear-gradient(180deg,#F6EEDB,#EFE3C8)}
+#bokeh{opacity:.8} #vig{display:none}
+#chrome{color:var(--muted)} #chrome .brandmark{color:var(--ink)}
+#chrome .dot{background:#D9663A;box-shadow:none}
+#subbox{background:rgba(255,251,241,.95);border:2px solid rgba(74,55,44,.3);box-shadow:0 8px 24px rgba(90,66,52,.22);color:var(--ink);backdrop-filter:none;font-weight:700;max-width:1600px}
+#subbox b{color:#D9663A}
+.abs{position:absolute!important}
+#host{left:1340px;top:380px}
+#host img{filter:drop-shadow(0 14px 14px rgba(90,66,52,.25))}
+#grain{position:absolute;inset:0;pointer-events:none;z-index:22;mix-blend-mode:multiply;opacity:.35}
+
+.paint{position:absolute;border:10px solid #FFFBF1;border-radius:34px;box-shadow:0 24px 54px rgba(90,66,52,.30);overflow:hidden;background:#fff;opacity:0}
+.paint svg{display:block;width:100%;height:100%}
+.cl,.lb{font-family:"Noto Sans TC";font-weight:700}
+#p1,#p2,#p4{left:120px;top:190px;width:1120px;height:680px}
+
+#title{left:0;width:1500px;top:290px;text-align:center}
+#title .h1{font-size:200px;letter-spacing:.06em;color:#C95A33}
+#title .h2{margin-top:6px;font-size:64px;color:var(--ink);letter-spacing:.1em}
+#title .eyebrow{color:#9A7A5A}
+#chip2{left:126px;top:122px;font-size:36px;opacity:0}
+.pill{display:inline-flex;align-items:center;padding:10px 32px;border-radius:999px;border:3px solid rgba(74,55,44,.4);background:#FFE9B0;box-shadow:0 6px 16px rgba(90,66,52,.2);font-weight:900;font-family:"Noto Sans TC";color:var(--ink)}
+
+.c3{top:200px;width:600px;height:660px;opacity:0}
+#c3L{left:110px} #c3R{left:750px}
+.c3 .hd{position:absolute;left:0;right:0;top:0;height:92px;display:flex;align-items:center;justify-content:center;z-index:2}
+.c3 .hd span{font-size:38px;font-weight:900;padding:8px 28px;border-radius:999px;border:3px solid rgba(74,55,44,.35)}
+.c3 .pic{position:absolute;left:0;right:0;top:92px;height:440px}
+.c3 .cap{position:absolute;left:0;right:0;bottom:0;height:128px;display:flex;align-items:center;justify-content:center;text-align:center;font-family:"Noto Serif TC";font-weight:900;font-size:42px;line-height:1.3;background:#FFFBF1;z-index:2}
+.badge{position:absolute;right:20px;top:14px;width:84px;height:84px;border-radius:50%;border:4px solid rgba(74,55,44,.4);display:grid;place-items:center;font-size:52px;font-weight:900;z-index:5;opacity:0;box-shadow:0 6px 14px rgba(90,66,52,.25)}
+#okL{background:#BFE3B8} #warnR{background:#F6C06A}
+
+#p5a,#p5b,#p5c{left:120px;top:190px;width:1120px;height:680px}
+#sun{left:120px;top:190px;width:1680px;height:680px}
+.q{position:absolute;font-family:"Noto Serif TC";font-weight:900;color:#FFF8E8;text-shadow:0 3px 18px rgba(120,60,50,.6),0 0 2px rgba(120,60,50,.5);opacity:0;line-height:1.35}
+#q11{left:200px;top:260px;font-size:84px}
+#q12{left:200px;top:290px;font-size:112px;color:#FFE9A8}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <filter id="wc" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="3" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6"/></filter>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter>
+  <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" seed="8"/><feColorMatrix values="0 0 0 0 .55  0 0 0 0 .45  0 0 0 0 .35  0 0 0 .55 0"/></filter>
+  <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9FD3E8"/><stop offset=".7" stop-color="#E9F4EE"/><stop offset="1" stop-color="#F6EFD8"/></linearGradient>
+  <radialGradient id="gSun"><stop offset="0" stop-color="#FFF6C8"/><stop offset="1" stop-color="#FFF6C8" stop-opacity="0"/></radialGradient>
+  <linearGradient id="gNight" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F2C56"/><stop offset=".55" stop-color="#5A4E86"/><stop offset="1" stop-color="#D99A85"/></linearGradient>
+  <radialGradient id="gGlow"><stop offset="0" stop-color="#FFC866" stop-opacity=".85"/><stop offset="1" stop-color="#FFC866" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gLit" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#FFF0A8"/><stop offset=".6" stop-color="#FFB85C"/><stop offset="1" stop-color="#F0883E"/></radialGradient>
+  <linearGradient id="gDusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C6FA6"/><stop offset=".45" stop-color="#E98F7A"/><stop offset=".75" stop-color="#F8C98E"/><stop offset="1" stop-color="#FBE3B0"/></linearGradient>
+  <linearGradient id="gMist" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#B4BADA"/><stop offset="1" stop-color="#E2DCE6"/></linearGradient>
+  <linearGradient id="gMeadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFE4EE"/><stop offset=".6" stop-color="#F4F2D8"/><stop offset="1" stop-color="#DDEBB4"/></linearGradient>
+
+  <!-- 阿嬤（原創角色）：原點在腳下，可重複使用 -->
+  <g id="ama" stroke="#6B4F3F" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M-60 0 C-64 -64 -48 -112 0 -114 C48 -112 64 -64 60 0 Z" fill="#B9A6CE"/>
+    <path d="M-20 -110 L0 -78 L20 -110 Z" fill="#F6ECD8"/>
+    <circle cx="0" cy="-152" r="44" fill="#F4D6BC"/>
+    <path d="M-46 -150 C-52 -212 52 -212 46 -150 C38 -178 -38 -178 -46 -150Z" fill="#ECE8E2"/>
+    <circle cx="0" cy="-200" r="19" fill="#ECE8E2"/>
+    <ellipse cx="-26" cy="-138" rx="10" ry="6" fill="#F29C8B" opacity=".55" stroke="none"/><ellipse cx="26" cy="-138" rx="10" ry="6" fill="#F29C8B" opacity=".55" stroke="none"/>
+  </g>
+  <!-- 孫女（原創角色） -->
+  <g id="girl" stroke="#6B4F3F" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="30" y="-170" width="24" height="76" rx="9" fill="#E8C76A"/>
+    <path d="M-16 -50 V-6 M16 -50 V-6" stroke="#F4D6BC" stroke-width="12" fill="none"/>
+    <ellipse cx="-16" cy="-2" rx="14" ry="6" fill="#6B4F3F"/><ellipse cx="16" cy="-2" rx="14" ry="6" fill="#6B4F3F"/>
+    <path d="M-38 -48 L38 -48 L46 -108 L-46 -108 Z" fill="#40527E"/>
+    <path d="M-36 -108 C-36 -156 -22 -170 0 -170 C22 -170 36 -156 36 -108 Z" fill="#FBF8F0"/>
+    <path d="M-10 -166 L0 -150 L10 -166 Z" fill="#D95F4A"/>
+    <circle cx="0" cy="-208" r="40" fill="#F4D6BC"/>
+    <path d="M-44 -208 C-48 -266 48 -266 44 -208 C40 -226 -40 -226 -44 -208 Z" fill="#4A3A33"/>
+    <path d="M-44 -208 V-172 C-44 -162 -33 -162 -33 -172 V-204 Z M44 -208 V-172 C44 -162 33 -162 33 -172 V-204 Z" fill="#4A3A33"/>
+    <ellipse cx="-24" cy="-194" rx="9" ry="5" fill="#F29C8B" opacity=".55" stroke="none"/><ellipse cx="24" cy="-194" rx="9" ry="5" fill="#F29C8B" opacity=".55" stroke="none"/>
+  </g>
+</defs></svg>
+
+<div id="stage">
+  <!-- S1：夏日老屋迴廊 -->
+  <div id="p1" class="paint"><svg viewBox="0 0 1120 680" preserveAspectRatio="xMidYMid slice">
+    <rect width="1120" height="680" fill="url(#gSky)"/>
+    <circle cx="900" cy="130" r="120" fill="url(#gSun)"/>
+    <g id="cl1" filter="url(#wc)" fill="#fff" opacity=".96"><ellipse cx="230" cy="130" rx="130" ry="46"/><ellipse cx="310" cy="100" rx="92" ry="52"/><ellipse cx="160" cy="112" rx="74" ry="38"/><ellipse cx="240" cy="160" rx="140" ry="22" fill="#DCE5EF"/></g>
+    <g id="cl2" filter="url(#wc)" fill="#fff" opacity=".9"><ellipse cx="760" cy="80" rx="110" ry="38"/><ellipse cx="830" cy="62" rx="70" ry="40"/><ellipse cx="760" cy="104" rx="120" ry="18" fill="#DCE5EF"/></g>
+    <g filter="url(#wc)">
+      <path d="M0 370 C150 305 300 335 450 345 C620 355 760 295 920 325 C1020 345 1080 335 1120 325 V680 H0Z" fill="#9CC8A2"/>
+      <path d="M0 430 C200 380 420 410 600 420 C800 430 960 390 1120 410 V680 H0Z" fill="#82B68A"/>
+      <path d="M0 470 L1120 450 V680 H0Z" fill="#C9DE98"/>
+      <path d="M0 500 L1120 486 M0 530 L1120 520 M0 562 L1120 556" stroke="#B6CF84" stroke-width="5" fill="none"/>
+    </g>
+    <g filter="url(#wc)" stroke="#6B4F3F" stroke-width="3.5" stroke-linejoin="round">
+      <path d="M100 350 L420 236 L740 350 L716 372 L420 272 L124 372Z" fill="#4F6F6E"/>
+      <path d="M170 360 L670 360 V545 H170Z" fill="#F2E4C4"/>
+      <path d="M380 410 H470 V545 H380Z" fill="#7A5A44"/>
+      <rect x="196" y="400" width="110" height="70" rx="6" fill="#CFE5EA"/><path d="M251 400 V470 M196 435 H306" stroke="#8E7B6A" stroke-width="3" fill="none"/>
+      <rect x="540" y="400" width="110" height="70" rx="6" fill="#CFE5EA"/><path d="M595 400 V470 M540 435 H650" stroke="#8E7B6A" stroke-width="3" fill="none"/>
+      <rect x="110" y="530" width="650" height="46" rx="6" fill="#C99A6B"/>
+      <rect x="170" y="372" width="16" height="160" fill="#A87A52"/><rect x="654" y="372" width="16" height="160" fill="#A87A52"/>
+    </g>
+    <g filter="url(#wc)"><ellipse cx="340" cy="470" rx="78" ry="70" fill="#C99A6B" stroke="#6B4F3F" stroke-width="3.5"/></g>
+    <g transform="translate(340 538)" filter="url(#wc)"><use href="#ama"/><path d="M-16 -150 q5 -5 10 0 M10 -150 q5 -5 10 0" fill="none" stroke="#6B4F3F" stroke-width="3.5"/><path d="M-6 -126 q6 5 12 0" fill="none" stroke="#6B4F3F" stroke-width="3.5"/></g>
+    <g transform="translate(540 566)" filter="url(#wc)"><use href="#girl"/><circle cx="-14" cy="-206" r="4.5" fill="#4A372C"/><circle cx="14" cy="-206" r="4.5" fill="#4A372C"/><path d="M-10 -188 q10 10 20 0" fill="none" stroke="#6B4F3F" stroke-width="3.5"/></g>
+    <g filter="url(#wc)"><path d="M0 640 C200 610 420 630 640 616 C860 604 1000 624 1120 612 V680 H0Z" fill="#6FA06E"/><path d="M60 650 l8 -26 l8 26 M300 646 l8 -28 l8 28 M820 640 l8 -26 l8 26 M1000 648 l8 -26 l8 26" stroke="#5B8F5E" stroke-width="5" fill="none"/></g>
+    <g id="qb1" style="transform-box:fill-box;transform-origin:50% 100%"><ellipse cx="248" cy="238" rx="48" ry="40" fill="#fff" stroke="#6B4F3F" stroke-width="3"/><path d="M270 270 l12 20 l-26 -12Z" fill="#fff" stroke="#6B4F3F" stroke-width="3"/><text x="248" y="256" text-anchor="middle" font-family="Inter" font-weight="800" font-size="52" fill="#E0763F">?</text></g>
+    <g id="qb2" style="transform-box:fill-box;transform-origin:50% 100%"><ellipse cx="400" cy="190" rx="52" ry="44" fill="#fff" stroke="#6B4F3F" stroke-width="3"/><path d="M380 228 l-4 22 l24 -16Z" fill="#fff" stroke="#6B4F3F" stroke-width="3"/><text x="400" y="210" text-anchor="middle" font-family="Inter" font-weight="800" font-size="58" fill="#E0763F">?</text></g>
+    <g id="qb3" style="transform-box:fill-box;transform-origin:50% 100%"><ellipse cx="548" cy="230" rx="44" ry="37" fill="#fff" stroke="#6B4F3F" stroke-width="3"/><path d="M526 262 l-10 20 l26 -12Z" fill="#fff" stroke="#6B4F3F" stroke-width="3"/><text x="548" y="248" text-anchor="middle" font-family="Inter" font-weight="800" font-size="48" fill="#E0763F">?</text></g>
+  </svg></div>
+  <div id="title" class="abs"><div class="eyebrow" data-t="eb"></div><div class="h1 serif">失智症</div><div class="h2 serif" data-t="sub"></div></div>
+
+  <!-- S2：四盞燈籠 -->
+  <div id="chip2" class="abs pill" data-t="chip"></div>
+  <div id="p2" class="paint"><svg viewBox="0 0 1120 680" preserveAspectRatio="xMidYMid slice">
+    <rect width="1120" height="680" fill="url(#gNight)"/>
+    <g id="stars"></g>
+    <circle cx="930" cy="110" r="46" fill="#FFF3CF"/><circle cx="946" cy="100" r="42" fill="#2A3560" opacity=".0"/>
+    <g filter="url(#wc)"><path d="M0 560 C200 500 380 540 560 520 C760 500 940 540 1120 510 V680 H0Z" fill="#3B3F6E"/><path d="M0 610 C240 570 520 600 760 580 C920 568 1040 590 1120 584 V680 H0Z" fill="#2C2F58"/>
+      <g fill="#2B2F55"><path d="M60 560 l40 -150 l40 150Z"/><path d="M130 560 l30 -110 l30 110Z"/><path d="M980 540 l44 -160 l44 160Z"/><path d="M930 548 l32 -118 l32 118Z"/></g>
+      <rect x="470" y="480" width="150" height="90" fill="#3C3866"/><path d="M450 482 L545 420 L640 482Z" fill="#2D2A52"/><rect x="520" y="510" width="34" height="38" fill="#FFC866"/></g>
+    <path d="M50 70 C330 48 740 96 1070 62" stroke="#6B4F3F" stroke-width="12" fill="none" stroke-linecap="round" filter="url(#wc)"/>
+    <g id="lanterns"></g>
+  </svg></div>
+
+  <!-- S3：想得起來 vs 想不起來 -->
+  <div id="c3L" class="paint c3"><div class="badge" id="okL">✓</div>
+    <div class="hd"><span style="background:#CFEBC9" data-t="okT"></span></div>
+    <div class="pic"><svg viewBox="0 0 580 440" preserveAspectRatio="xMidYMid slice">
+      <rect width="580" height="440" fill="url(#gMeadow)"/>
+      <g filter="url(#wc)"><path d="M0 330 C140 290 300 320 580 296 V440 H0Z" fill="#A9D2A0"/><path d="M0 380 C200 350 380 372 580 350 V440 H0Z" fill="#8DBF8D"/></g>
+      <g transform="translate(290 270)"><circle r="130" fill="url(#gGlow)" id="glL" opacity=".25"/>
+        <path d="M0 -150 V-62" stroke="#6B4F3F" stroke-width="5"/><rect x="-24" y="-66" width="48" height="14" rx="4" fill="#7A5A44"/>
+        <ellipse cx="0" cy="-6" rx="52" ry="62" fill="#6A5A78" stroke="#6B4F3F" stroke-width="3.5"/>
+        <ellipse id="litL" cx="0" cy="-6" rx="52" ry="62" fill="url(#gLit)" stroke="#6B4F3F" stroke-width="3.5" opacity=".12"/>
+        <rect x="-24" y="52" width="48" height="14" rx="4" fill="#7A5A44"/><path d="M0 66 V96 M-8 96 H8" stroke="#C9604A" stroke-width="5"/></g>
+      <g id="stL" transform="translate(120 120)"><circle r="40" fill="url(#gGlow)"/><path d="M0 -22 L6 -6 L24 -4 L10 7 L15 24 L0 14 L-15 24 L-10 7 L-24 -4 L-6 -6Z" fill="#FFE27A" stroke="#6B4F3F" stroke-width="3"/></g>
+    </svg></div>
+    <div class="cap" data-t="okC"></div></div>
+
+  <div id="c3R" class="paint c3"><div class="badge" id="warnR">!</div>
+    <div class="hd"><span style="background:#F8D2A8" data-t="badT"></span></div>
+    <div class="pic"><svg viewBox="0 0 580 440" preserveAspectRatio="xMidYMid slice">
+      <rect width="580" height="440" fill="url(#gMist)"/>
+      <g filter="url(#wc)"><path d="M0 330 C140 290 300 320 580 296 V440 H0Z" fill="#9BA7C4"/><path d="M0 380 C200 350 380 372 580 350 V440 H0Z" fill="#8791B5"/></g>
+      <g transform="translate(290 270)"><circle r="130" fill="url(#gGlow)" id="glR" opacity=".1"/>
+        <path d="M0 -150 V-62" stroke="#6B4F3F" stroke-width="5"/><rect x="-24" y="-66" width="48" height="14" rx="4" fill="#7A5A44"/>
+        <ellipse cx="0" cy="-6" rx="52" ry="62" fill="#6A5A78" stroke="#6B4F3F" stroke-width="3.5"/>
+        <ellipse id="litR" cx="0" cy="-6" rx="52" ry="62" fill="url(#gLit)" stroke="#6B4F3F" stroke-width="3.5" opacity=".12"/>
+        <rect x="-24" y="52" width="48" height="14" rx="4" fill="#7A5A44"/><path d="M0 66 V96 M-8 96 H8" stroke="#C9604A" stroke-width="5"/></g>
+      <g id="fog" fill="#fff" filter="url(#soft)"><ellipse id="f1" cx="150" cy="300" rx="190" ry="46" opacity=".6"/><ellipse id="f2" cx="430" cy="250" rx="200" ry="50" opacity=".6"/><ellipse id="f3" cx="290" cy="360" rx="260" ry="50" opacity=".7"/></g>
+      <g id="stR" transform="translate(120 120)"><circle r="40" fill="url(#gGlow)"/><path d="M0 -22 L6 -6 L24 -4 L10 7 L15 24 L0 14 L-15 24 L-10 7 L-24 -4 L-6 -6Z" fill="#FFE27A" stroke="#6B4F3F" stroke-width="3"/></g>
+    </svg></div>
+    <div class="cap" data-t="badC"></div></div>
+
+  <!-- S4：預防，小樹苗慢慢長大 -->
+  <div id="p4" class="paint"><svg viewBox="0 0 1120 680" preserveAspectRatio="xMidYMid slice">
+    <rect width="1120" height="680" fill="url(#gSky)"/>
+    <g id="sunA" transform="translate(900 300)"><circle r="150" fill="url(#gSun)"/><circle r="52" fill="#FFE9A0" stroke="#F5C96B" stroke-width="4"/></g>
+    <g filter="url(#wc)"><path d="M0 430 C200 370 420 410 640 400 C860 388 1000 360 1120 380 V680 H0Z" fill="#A9D2A0"/><path d="M0 500 C260 450 560 490 800 474 C960 464 1050 470 1120 466 V680 H0Z" fill="#8DBF8D"/><path d="M0 590 C300 560 700 590 1120 566 V680 H0Z" fill="#74AB7C"/></g>
+    <g id="sap" style="transform-box:fill-box;transform-origin:50% 100%" filter="url(#wc)">
+      <path d="M556 560 C552 500 566 440 560 380 C558 340 566 310 560 280" stroke="#8A6446" stroke-width="22" fill="none" stroke-linecap="round"/>
+      <path d="M560 470 C520 450 490 420 470 392" stroke="#8A6446" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M562 420 C600 400 630 372 648 344" stroke="#8A6446" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <g fill="#7DBB72" stroke="#5F9A5C" stroke-width="3"><ellipse cx="560" cy="250" rx="70" ry="52"/><ellipse cx="500" cy="296" rx="62" ry="44"/><ellipse cx="622" cy="290" rx="62" ry="44"/><ellipse cx="460" cy="376" rx="54" ry="38"/><ellipse cx="660" cy="334" rx="54" ry="38"/></g>
+      <g fill="#A5D690" opacity=".8"><ellipse cx="540" cy="230" rx="32" ry="20"/><ellipse cx="610" cy="276" rx="28" ry="18"/></g>
+    </g>
+    <g id="ic1" style="transform-box:fill-box;transform-origin:50% 100%" filter="url(#wc)" transform="translate(190 240)"><path d="M-62 24 C-62 -8 -42 -30 -10 -30 L10 -8 C34 -4 62 2 64 24 C64 38 52 44 32 44 H-50 C-58 44 -62 34 -62 24Z" fill="#E9795A" stroke="#6B4F3F" stroke-width="3.5"/><rect x="-62" y="36" width="126" height="14" rx="7" fill="#FFF8EA" stroke="#6B4F3F" stroke-width="3.5"/><path d="M-6 -14 l12 8 M6 -4 l12 8" stroke="#FFF8EA" stroke-width="4"/></g>
+    <g id="ic2" style="transform-box:fill-box;transform-origin:50% 100%" filter="url(#wc)" transform="translate(190 470)"><path d="M-66 -34 L0 -24 L66 -34 V40 L0 50 L-66 40Z" fill="#4F8A8B" stroke="#6B4F3F" stroke-width="3.5"/><path d="M-58 -30 L0 -20 V42 L-58 34Z" fill="#FFF8EA" stroke="#6B4F3F" stroke-width="3"/><path d="M58 -30 L0 -20 V42 L58 34Z" fill="#F6EAD0" stroke="#6B4F3F" stroke-width="3"/><path d="M-44 -6 L-14 -2 M-44 8 L-14 12 M14 -2 L44 -6 M14 12 L44 8" stroke="#B9A48A" stroke-width="3"/></g>
+    <g id="ic3" style="transform-box:fill-box;transform-origin:50% 100%" filter="url(#wc)" transform="translate(930 240)"><path d="M-78 -12 H-14 C-14 28 -26 44 -46 44 C-66 44 -78 28 -78 -12Z" fill="#FFFBF1" stroke="#6B4F3F" stroke-width="3.5"/><path d="M-14 0 C6 0 6 26 -14 26" fill="none" stroke="#6B4F3F" stroke-width="3.5"/><path d="M14 -12 H78 C78 28 66 44 46 44 C26 44 14 28 14 -12Z" fill="#F6D9A0" stroke="#6B4F3F" stroke-width="3.5"/><path d="M78 0 C98 0 98 26 78 26" fill="none" stroke="#6B4F3F" stroke-width="3.5"/><path d="M-46 -26 q-8 -14 0 -26 M46 -26 q-8 -14 0 -26" stroke="#B9A48A" stroke-width="4" fill="none"/></g>
+    <g id="ic4" style="transform-box:fill-box;transform-origin:50% 100%" filter="url(#wc)" transform="translate(930 470)"><path d="M-62 24 C-62 -36 -22 -58 22 -54 C62 -50 76 -10 70 24Z" fill="#F2C94C" stroke="#6B4F3F" stroke-width="3.5"/><path d="M-8 -54 C-4 -30 -4 0 -6 24" stroke="#FFF8EA" stroke-width="12" fill="none"/><path d="M-70 24 H82" stroke="#6B4F3F" stroke-width="7" stroke-linecap="round"/><path d="M-20 28 C-20 48 -10 58 4 60" stroke="#6B4F3F" stroke-width="4" fill="none"/></g>
+    <g class="lb" fill="#4A372C" font-size="34" text-anchor="middle"><text id="t1" x="190" y="330" data-t="i1">運動</text><text id="t2" x="190" y="570" data-t="i2">動腦</text><text id="t3" x="930" y="330">社交</text><text id="t4" x="930" y="570">安全帽</text></g>
+  </svg></div>
+
+  <!-- S5：就醫、三不、自我介紹 -->
+  <div id="p5a" class="paint"><svg viewBox="0 0 1120 680" preserveAspectRatio="xMidYMid slice">
+    <rect width="1120" height="680" fill="url(#gSky)"/>
+    <g filter="url(#wc)"><path d="M0 380 C200 330 420 370 640 360 C860 350 1000 320 1120 340 V680 H0Z" fill="#A9D2A0"/><path d="M0 450 C260 410 560 440 800 430 C960 422 1050 428 1120 424 V680 H0Z" fill="#8DBF8D"/>
+      <path d="M-20 640 C200 560 520 540 780 520 C900 512 980 506 1040 500 L1060 530 C980 548 900 556 800 568 C540 596 260 650 140 690 L-20 690Z" fill="#E8D3A8" stroke="#D2B985" stroke-width="3"/></g>
+    <g filter="url(#wc)" stroke="#6B4F3F" stroke-width="3.5" stroke-linejoin="round"><path d="M790 300 L920 230 L1050 300Z" fill="#B9503E"/><rect x="810" y="300" width="220" height="200" fill="#FBF3E2"/><rect x="900" y="400" width="44" height="100" fill="#7A5A44"/>
+      <rect x="826" y="330" width="60" height="50" rx="4" fill="#CFE5EA"/><rect x="954" y="330" width="60" height="50" rx="4" fill="#CFE5EA"/>
+      <rect x="840" y="250" width="160" height="40" rx="10" fill="#FFFBF1"/><path d="M768 400 h22 v22 h-22Z" fill="none"/></g>
+    <text x="920" y="280" text-anchor="middle" font-family="Noto Sans TC" font-weight="900" font-size="28" fill="#2F8F6A">記憶門診</text>
+    <g id="walk"><g id="walkIn"><g transform="translate(190 600) scale(.8)" filter="url(#wc)"><use href="#ama"/><path d="M-16 -150 q5 -5 10 0 M10 -150 q5 -5 10 0" fill="none" stroke="#6B4F3F" stroke-width="3.5"/><path d="M-6 -126 q6 5 12 0" fill="none" stroke="#6B4F3F" stroke-width="3.5"/></g>
+      <g transform="translate(290 596) scale(.78)" filter="url(#wc)"><use href="#girl"/><circle cx="-14" cy="-206" r="4.5" fill="#4A372C"/><circle cx="14" cy="-206" r="4.5" fill="#4A372C"/><path d="M-10 -188 q10 10 20 0" fill="none" stroke="#6B4F3F" stroke-width="3.5"/></g>
+      <path d="M244 484 C260 500 276 500 292 484" stroke="#6B4F3F" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M244 484 C260 500 276 500 292 484" stroke="#F4D6BC" stroke-width="5" fill="none" stroke-linecap="round"/></g></g>
+  </svg></div>
+
+  <div id="p5b" class="paint"><svg viewBox="0 0 1120 680" preserveAspectRatio="xMidYMid slice">
+    <rect width="1120" height="680" fill="url(#gMeadow)"/>
+    <g filter="url(#wc)"><path d="M0 520 C260 470 560 510 820 494 C960 486 1050 490 1120 486 V680 H0Z" fill="#9CCB93"/></g>
+    <g filter="url(#wc)"><path d="M-20 70 C240 40 560 90 880 66 C1000 58 1080 72 1140 60" stroke="#7A5A44" stroke-width="26" fill="none" stroke-linecap="round"/>
+      <g fill="#7DBB72" stroke="#5F9A5C" stroke-width="3"><ellipse cx="120" cy="80" rx="64" ry="34"/><ellipse cx="260" cy="60" rx="60" ry="30"/><ellipse cx="820" cy="88" rx="64" ry="34"/><ellipse cx="980" cy="66" rx="68" ry="34"/><ellipse cx="540" cy="86" rx="54" ry="28"/></g></g>
+    <g id="pl1"><g id="pl1in"><path d="M300 78 V210 M440 78 V210" stroke="#7A5A44" stroke-width="5"/><rect x="230" y="206" width="280" height="170" rx="22" fill="#EBC995" stroke="#7A5A44" stroke-width="5" filter="url(#wc)"/><text x="370" y="316" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="62" fill="#4A372C" data-t="n1">不糾正</text></g></g>
+    <g id="pl2"><g id="pl2in"><path d="M560 78 V250 M700 78 V250" stroke="#7A5A44" stroke-width="5"/><rect x="490" y="246" width="280" height="170" rx="22" fill="#F2D49F" stroke="#7A5A44" stroke-width="5" filter="url(#wc)"/><text x="630" y="356" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="62" fill="#4A372C">不爭辯</text></g></g>
+    <g id="pl3"><g id="pl3in"><path d="M820 78 V210 M960 78 V210" stroke="#7A5A44" stroke-width="5"/><rect x="750" y="206" width="280" height="170" rx="22" fill="#EBC995" stroke="#7A5A44" stroke-width="5" filter="url(#wc)"/><text x="890" y="316" text-anchor="middle" font-family="Noto Serif TC" font-weight="900" font-size="62" fill="#4A372C">不指責</text></g></g>
+  </svg></div>
+
+  <div id="p5c" class="paint"><svg viewBox="0 0 1120 680" preserveAspectRatio="xMidYMid slice">
+    <rect width="1120" height="680" fill="#F7E8CC"/>
+    <rect y="0" width="1120" height="470" fill="#F3E0BC"/>
+    <rect x="130" y="110" width="300" height="240" rx="10" fill="#CFE5EA" stroke="#C99A6B" stroke-width="14"/><path d="M280 110 V350 M130 230 H430" stroke="#C99A6B" stroke-width="8"/>
+    <g filter="url(#wc)"><rect y="470" width="1120" height="210" fill="#C99A6B"/><path d="M0 520 H1120 M0 580 H1120 M0 640 H1120" stroke="#B5845A" stroke-width="4"/><ellipse cx="640" cy="480" rx="120" ry="90" fill="#C99A6B" stroke="#6B4F3F" stroke-width="3.5"/></g>
+    <g transform="translate(640 560)" filter="url(#wc)"><use href="#ama"/><circle cx="-16" cy="-152" r="4.5" fill="#4A372C"/><circle cx="16" cy="-152" r="4.5" fill="#4A372C"/><path d="M-8 -130 q8 8 16 0" fill="none" stroke="#6B4F3F" stroke-width="3.5"/></g>
+    <g id="gh" transform="translate(380 600)"><g filter="url(#wc)"><g transform="scale(1 .86)"><use href="#girl"/></g><circle cx="14" cy="-186" r="4.5" fill="#4A372C"/><circle cx="-14" cy="-186" r="4.5" fill="#4A372C"/><path d="M-10 -170 q10 10 20 0" fill="none" stroke="#6B4F3F" stroke-width="3.5"/><path d="M36 -108 C70 -100 100 -92 130 -98" stroke="#F4D6BC" stroke-width="14" fill="none" stroke-linecap="round"/></g></g>
+    <g id="bub" style="transform-box:fill-box;transform-origin:20% 100%"><path d="M240 140 H580 a40 40 0 0 1 40 40 V230 a40 40 0 0 1 -40 40 H410 L350 318 L360 270 H280 a40 40 0 0 1 -40 -40 V180 a40 40 0 0 1 0 -40Z" fill="#fff" stroke="#6B4F3F" stroke-width="4"/><text x="430" y="228" text-anchor="middle" font-family="Noto Sans TC" font-weight="900" font-size="31" fill="#4A372C" data-t="hello"></text></g>
+    <g id="hearts" fill="#EE8A7A" opacity="0"><path d="M700 300 c-18 -26 -48 -2 -26 22 l26 24 l26 -24 c22 -24 -8 -48 -26 -22Z"/></g>
+  </svg></div>
+
+  <!-- S6：夕陽 -->
+  <div id="sun" class="paint"><svg viewBox="0 0 1680 680" preserveAspectRatio="xMidYMid slice">
+    <rect width="1680" height="680" fill="url(#gDusk)"/>
+    <circle id="sunD" cx="1160" cy="430" r="170" fill="url(#gSun)"/><circle cx="1160" cy="430" r="62" fill="#FFF0C0"/>
+    <g filter="url(#wc)"><path d="M0 470 C300 400 600 450 900 440 C1200 430 1450 380 1680 420 V680 H0Z" fill="#9F7FA0" opacity=".85"/><path d="M0 540 C400 500 800 530 1200 510 C1400 500 1560 510 1680 504 V680 H0Z" fill="#6C5A82"/><path d="M0 610 C500 590 1000 610 1680 590 V680 H0Z" fill="#4E4268"/></g>
+    <g id="walkers" filter="url(#wc)" fill="#43385F" stroke="#43385F" stroke-width="3" stroke-linejoin="round">
+      <g transform="translate(1000 592)"><path d="M-30 0 C-34 -70 -22 -118 0 -120 C22 -118 34 -70 30 0Z"/><circle cx="0" cy="-148" r="30"/><circle cx="0" cy="-178" r="16"/></g>
+      <g transform="translate(1100 592)"><path d="M-40 0 L-36 -90 C-34 -128 -16 -150 0 -150 C16 -150 34 -128 36 -90 L40 0Z"/><circle cx="0" cy="-182" r="34"/><path d="M-34 -184 C-36 -230 36 -230 34 -184 C26 -204 -26 -204 -34 -184Z"/></g>
+      <path d="M1036 -40 C1052 -30 1064 -30 1076 -40" transform="translate(0 560)" fill="none" stroke-width="10" stroke-linecap="round"/>
+    </g>
+    <g id="birds" fill="none" stroke="#5A4A72" stroke-width="4" stroke-linecap="round"><path id="b1" d="M0 0 q10 -12 20 0 q10 -12 20 0"/><path id="b2" d="M0 0 q8 -10 16 0 q8 -10 16 0"/><path id="b3" d="M0 0 q8 -10 16 0 q8 -10 16 0"/></g>
+  </svg></div>
+  <div id="q11" class="q"><span data-t="q11a"></span><br><span data-t="q11b"></span></div>
+  <div id="q12" class="q"><span data-t="q12a"></span><br><span data-t="q12b"></span></div>
+
+  <div id="host"><img src="assets/host.svg" alt=""></div>
+  <svg id="grain" width="1920" height="1080"><filter id="pf"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="8"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .4  0 0 0 0 .3  0 0 0 .5 0"/></filter><rect width="1920" height="1080" filter="url(#pf)"/></svg>
+</div>
+<script src="_runtime/gsap.min.js"></script>
+<script src="_tl.js"></script>
+<script src="_runtime/core.js"></script>
+<script>
+window.EPISODE = {
+  strings: {
+    zh: { eb:"WHAT IS DEMENTIA", sub:"當記憶迷了路", chip:"失智症 ＝ 一群症狀",
+          okT:"正常的健忘", okC:"提醒之後<br>想得起來", badT:"失智警訊", badC:"提醒了也<br>想不起來",
+          i1:"運動", n1:"不糾正", hello:"阿嬤，我是你孫女喔！",
+          q11a:"他會慢慢忘了你，", q11b:"但請不要忘了他。", q12a:"記憶會迷路，", q12b:"但愛不會。" }
+  },
+  build(c) {
+    const { m, S, L, LE, LM } = c;
+    const NS = "http://www.w3.org/2000/svg", R = c.rng(11);
+    const el = (tag, at, par) => { const e = document.createElementNS(NS, tag); for (const k in at) e.setAttribute(k, at[k]); par.appendChild(e); return e; };
+    const P = (id, t, d = .9, dy = 40) => m.fromTo(id, { opacity: 0, y: dy }, { opacity: 1, y: 0, duration: d, ease: "expo.out" }, t);
+    const O = (id, t, d = .6) => m.to(id, { opacity: 0, y: -24, duration: d, ease: "power2.in" }, t);
+    const pop = (id, t, d = .5) => m.fromTo(id, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: d, ease: "back.out(2.4)" }, t);
+
+    /* 星星與燈籠（用固定亂數產生，每次渲染都一樣） */
+    const stars = c.$("#stars"); c.state.stars = [];
+    for (let i = 0; i < 46; i++) c.state.stars.push(el("circle", { cx: 20 + R() * 1080, cy: 10 + R() * 330, r: 1.2 + R() * 2.2, fill: "#FFF6D8" }, stars));
+    const LX = [230, 450, 670, 890], LN = ["記憶", "語言", "判斷", "方向感"], lg = c.$("#lanterns");
+    LX.forEach((x, k) => {
+      const g = el("g", { transform: `translate(${x} 150) scale(1.4)` }, lg);
+      el("circle", { id: "gl" + k, r: 130, fill: "url(#gGlow)", cy: 50 }, g);
+      el("path", { d: "M0 -84 V-10", stroke: "#6B4F3F", "stroke-width": 4, fill: "none" }, g);
+      el("rect", { x: -24, y: -12, width: 48, height: 14, rx: 4, fill: "#7A5A44" }, g);
+      el("ellipse", { cx: 0, cy: 50, rx: 50, ry: 58, fill: "#6A5A78", stroke: "#6B4F3F", "stroke-width": 3 }, g);
+      el("ellipse", { id: "lit" + k, cx: 0, cy: 50, rx: 50, ry: 58, fill: "url(#gLit)", stroke: "#6B4F3F", "stroke-width": 3 }, g);
+      el("path", { d: "M-34 30 C-20 18 20 18 34 30 M-36 56 C-20 44 20 44 36 56", stroke: "#C9604A", "stroke-width": 3, fill: "none", opacity: .5 }, g);
+      el("rect", { x: -24, y: 106, width: 48, height: 14, rx: 4, fill: "#7A5A44" }, g);
+      el("path", { d: "M0 120 V150 M-7 150 H7", stroke: "#C9604A", "stroke-width": 5 }, g);
+      const t = el("text", { id: "ln" + k, x, y: 470, "text-anchor": "middle", "font-family": "Noto Serif TC", "font-weight": 900, "font-size": 60, fill: "#FFF1D0" }, lg); t.textContent = LN[k];
+    });
+    // 鳥群
+    c.state.birds = ["#b1", "#b2", "#b3"];
+
+    /* S1 */
+    c.hostTo({ opacity: 1, scale: .8 }, S(0).start + .2, .8);
+    P("#p1", S(0).start + .2, 1.0);
+    ["#qb1", "#qb2", "#qb3"].forEach((q, k) => pop(q, LM(0, 0, .42 + k * .18)));
+    O("#p1", L(0, 1) - .3);
+    c.rise("#title .eyebrow", L(0, 1) + .1, 1.0); c.rise("#title .h1", L(0, 1) + .25, 1.2); c.rise("#title .h2", L(0, 1) + .9, 1.0);
+
+    /* S2：四盞燈籠依序變暗 */
+    c.out("#title", S(1).start - .4);
+    P("#p2", S(1).start + .1, 1.0); c.rise("#chip2", S(1).start + .4, .9, 24);
+    [0, 1, 2, 3].forEach(k => {
+      const t = LM(1, 0, .42 + k * .15);
+      m.to("#lit" + k, { opacity: .1, duration: 1.1, ease: "power1.inOut" }, t);
+      m.to("#gl" + k, { opacity: .08, duration: 1.1, ease: "power1.inOut" }, t);
+      m.to("#ln" + k, { opacity: .5, duration: .8 }, t);
+    });
+
+    /* S3：提醒後想得起來 vs 想不起來 */
+    O("#p2", S(2).start - .4); O("#chip2", S(2).start - .5);
+    c.hostTo({ x: 0, scale: .62 }, S(2).start - .2, .9);
+    P("#c3L", S(2).start + .2, 1.0);
+    m.fromTo("#stL", { x: -140, y: -30, opacity: 0 }, { x: 0, y: 40, opacity: 1, duration: 1.0, ease: "power2.out" }, L(2, 0) + .35);
+    m.to("#stL", { opacity: 0, scale: .2, duration: .4 }, L(2, 0) + 1.5);
+    m.to("#litL", { opacity: 1, duration: .8 }, L(2, 0) + 1.4); m.to("#glL", { opacity: 1, duration: .8 }, L(2, 0) + 1.4);
+    pop("#okL", L(2, 0) + 1.6);
+    P("#c3R", L(2, 1) - .3, 1.0);
+    m.fromTo("#stR", { x: -140, y: -30, opacity: 0 }, { x: 0, y: 40, opacity: 1, duration: 1.0, ease: "power2.out" }, L(2, 1) + .4);
+    m.to("#stR", { opacity: 0, scale: .2, duration: .5 }, L(2, 1) + 1.6);
+    m.to("#litR", { opacity: .3, duration: .3, yoyo: true, repeat: 1 }, L(2, 1) + 1.5);
+    m.to("#fog", { opacity: 1, duration: 1.2 }, L(2, 1) + 1.6);
+    pop("#warnR", LM(2, 1, .7));
+
+    /* S4：小樹苗 */
+    O(["#c3L", "#c3R"], S(3).start - .4);
+    P("#p4", S(3).start + .1, 1.0);
+    m.fromTo("#sunA", { y: 140, opacity: 0 }, { y: 0, opacity: 1, duration: 1.6, ease: "power2.out" }, S(3).start + .4);
+    m.fromTo("#sap", { scale: .12, opacity: 0 }, { scale: .5, opacity: 1, duration: 1.0, ease: "back.out(1.6)" }, L(3, 0) + .3);
+    ["#ic1", "#ic2", "#ic3", "#ic4"].forEach((id, k) => {
+      const t = LM(3, 1, .1 + k * .2);
+      pop(id, t, .55); pop("#t" + (k + 1), t + .15, .4);
+      m.to("#sap", { scale: .5 + (k + 1) * .125, duration: .7, ease: "back.out(1.5)" }, t + .2);
+    });
+
+    /* S5 */
+    O("#p4", S(4).start - .4);
+    P("#p5a", S(4).start + .1, 1.0);
+    m.fromTo("#walkIn", { x: -80 }, { x: 330, duration: LE(4, 0) - L(4, 0) + .4, ease: "sine.inOut" }, L(4, 0) - .1);
+    O("#p5a", L(4, 1) - .3);
+    P("#p5b", L(4, 1) - .1, 1.0);
+    [1, 2, 3].forEach((k, i) => m.fromTo("#pl" + k, { opacity: 0, y: -160 }, { opacity: 1, y: 0, duration: .8, ease: "bounce.out" }, LM(4, 1, .3 + i * .27)));
+    O("#p5b", L(4, 2) - .3);
+    P("#p5c", L(4, 2) - .1, 1.0);
+    pop("#bub", L(4, 2) + .4, .6);
+    m.to("#hearts", { opacity: 1, y: -30, duration: 1.0 }, LE(4, 2) - .8);
+
+    /* S6 */
+    O("#p5c", S(5).start - .4);
+    c.hostTo({ opacity: 0 }, S(5).start - .3, .8);
+    P("#sun", S(5).start + .1, 1.2);
+    m.fromTo("#walkers", { x: -380 }, { x: 0, duration: LE(5, 1) - S(5).start, ease: "none" }, S(5).start + .1);
+    c.rise("#q11", L(5, 0) + .1, 1.1);
+    m.to("#q11", { opacity: 0, y: -20, duration: .5, ease: "power2.in" }, L(5, 1) - .3);
+    c.rise("#q12", L(5, 1) + .05, 1.2);
+  },
+  tick(t, c) {
+    const sv = (id, tr) => { const e = c.$(id); if (e) e.setAttribute("transform", tr); };
+    sv("#cl1", `translate(${(Math.sin(t * .18) * 40).toFixed(1)} 0)`);
+    sv("#cl2", `translate(${(Math.sin(t * .13 + 2) * -36).toFixed(1)} 0)`);
+    (c.state.stars || []).forEach((s, i) => s.setAttribute("opacity", (.55 + .45 * Math.sin(t * 1.6 + i * 1.7)).toFixed(2)));
+    ["#f1", "#f2", "#f3"].forEach((id, i) => { const e = c.$(id); if (e) e.setAttribute("transform", `translate(${(Math.sin(t * .35 + i * 2) * 26).toFixed(1)} 0)`); });
+    [["#pl1in", 370, 78], ["#pl2in", 630, 78], ["#pl3in", 890, 78]].forEach(([id, x, y], i) => sv(id, `rotate(${(Math.sin(t * 1.5 + i * 1.3) * 2.2).toFixed(2)} ${x} ${y})`));
+    const wb = c.$("#walkIn"); // 走路時上下輕晃
+    if (wb) wb.style.translate = `0 ${(Math.abs(Math.sin(t * 5)) * -5).toFixed(1)}px`;
+    (c.state.birds || []).forEach((id, i) => sv(id, `translate(${(180 + i * 70 + (t * 38) % 1500).toFixed(1)} ${(130 + i * 34 + Math.sin(t * 1.4 + i) * 12).toFixed(1)})`));
+    const wk = c.$("#walkers"); if (wk) wk.style.translate = `0 ${(Math.abs(Math.sin(t * 3.2)) * -4).toFixed(1)}px`;
+  }
+};
+</script>
+<script src="_runtime/runtime.js"></script>
+</body></html>
